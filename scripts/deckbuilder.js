@@ -1,5 +1,5 @@
 async function _handleBuildDeckSkill(card) {
-	console.log(card);
+	console.log("GOT IT");
 	const context = {
 		scryfallApiQueryString: card.value,
 	};
