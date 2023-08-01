@@ -16,6 +16,6 @@
   ],
   "version": "1.0",
   "models": ["models/scryfall_api.json.hbs"],
-  "skills": ["skills/find-card.json.hbs"],
+  "skills": ["skills/fetch-card.json.hbs"],
   "scripts": ["scripts/deckbuilder.js"]
 }
