@@ -1,0 +1,21 @@
+{
+	"name": "deckbuilder",
+	"title": "Deckbuilder",
+	"description": "Gives the companion the ability to craft decks for Magic: The Gathering based off of a given card",
+	"authors": [
+		{
+			"name": "Chris Williams",
+			"email": "chriscancodethat@gmail.com",
+			"url": "https://chriscancodethat.xyz"
+		},
+		{
+			"name": "Webaverse",
+			"email": "support@webaverse.com",
+			"url": "https://www.moemate.io"
+		}
+	],
+	"version": "1.0",
+	"models": ["models/scryfall_api.json.hbs"],
+	"skills": ["skills/find-card.json.hbs"],
+	"scripts": ["scripts/deckbuilder.js"]
+}
