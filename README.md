@@ -9,3 +9,5 @@ To test, make sure the skill is enabled then ask Moe for info about a Magic: The
 ```
 Can you give me info about the card Memory Deluge?
 ```
+
+This should produce a response like this: (screenshot)[./screenshot.png]
