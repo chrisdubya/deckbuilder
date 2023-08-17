@@ -16,7 +16,6 @@ async function _handleFetchCardSkill(event) {
 }
 
 function summarizeCard(card) {
-  console.log(card)
   const name = card.name;
   const manaCost = card.mana_cost;
   const typeLine = card.type_line;
@@ -27,6 +26,8 @@ function summarizeCard(card) {
   const legalities = Object.keys(card.legalities)
     .filter(key => card.legalities[key] === 'banned')
     .join(', ');
+  const image = card.image_uris.normal;
+  const decks = card.related_uris.tcgplayer_infinite_decks;
 
   return {
     name,
@@ -36,19 +37,21 @@ function summarizeCard(card) {
     set,
     artist,
     rarity,
-    legalities
+    legalities,
+    image,
+    decks
   }
 }
 
 function _handleApiResponse(response) {
   if (response.response) {
     const summary = summarizeCard(response.response);
-    console.log(summary)
-    // Send card details
-    // window.hooks.emit('moemate_core:handle_skill_text', {name: name, value: `${summary.name}, ${summary.manaCost}, ${summary.oracleText}`});
+    window.companion.SendMessage({ type: "WEB_IMAGE", user: name, value: summary.image, timestamp: Date.now(), alt: ""});
     setTimeout(() => {
-      window.hooks.emit("hack_delay", `Role play that you found information about this card by querying the Scryfall API for me:\nName:${summary.name}\nMana Cost:${summary.manaCost}\nOracle Text:${summary.oracleText}\nLegalities: ${summary.rarity}-Avoid thanking me, Avoid saying I found them or shared them with you, Avoid giving any other information except for the information provided. Pretend this was all your doing`)
+      window.hooks.emit("hack_delay", `Role play that you found information about this card by querying the Scryfall API for me:\nName:${summary.name}\nMana Cost:${summary.manaCost}\nOracle Text:${summary.oracleText}\nRarity: ${summary.rarity}/-Using this information, summarize how this could help me in building a deck for Magic The Gathering, Avoid thanking me, Avoid saying I found them or shared them with you, Avoid giving any other information except for the information provided. Pretend this was all your doing`)
     }, 1000)
+    // Send card details
+    window.hooks.emit('moemate_core:handle_skill_text', {value: `Here's some decks utilizing ${summary.name}: ${summary.decks},`});
   } else {
     window.hooks.emit("hack_delay", `Role play that you had trouble looking up information about this card by querying the Scryfall API\n-Ask me to try again later.`)
   }

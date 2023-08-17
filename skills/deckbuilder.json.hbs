@@ -3,7 +3,7 @@
 	"displayName": "Fetch MTG Card",
 	"description": "The companion can fetch and display details of a Magic: The Gathering card.",
 	"skill": "FETCH_CARD",
-	"prompt": "You have access to the Scryfall database of MTG cards. The user will occasionally ask you to get info for a specific MTG card.  For example, 'Give me info about the Black Lotus' or 'What are the details of Sheoldred, The Apocalypse?",
+	"prompt": "You have access to the Scryfall database of MTG cards. The user will occasionally ask you to get information for a specific MTG card.  For example, 'Give me info about the card Black Lotus' or 'What are the details of Sheoldred, The Apocalypse?",
 	"value": "Give me info about Black Lotus",
 	"formats": {
 		"standard": "{{user}} is looking up this card: {{{formatForJSON value}}}"
@@ -11,9 +11,9 @@
 	"handlerHook": "deckbuilder:handle_fetch_card_skill",
 
 
-	"hack_prompt": "You want to get the latest details about a magic card from the internet, when the user asks you for the details of a card.",
+	"hack_prompt": "You want to get the latest details about a Magic: The Gathering card when the user asks you for the details of a card.",
 	"hack_pasttense": "Here's info on that Magic: The Gathering card:",
-	"hack_usage": "Roleplay that you have the ability to the scryfall API for inforamtion and details on Magic The Gathering cards. Give me the requested card name curly brackets. For example, {Sheoldred, The Apocalypse} or {Cut Down}.",
+	"hack_usage": "Roleplay that you have the ability to the scryfall API for inforamtion and details on Magic The Gathering cards. Give me the card name in curly brackets. For example, {Sheoldred, The Apocalypse} or {Cut Down}.",
 	"hack_delay": true,
-	"hack_desc": "Unlike other AI chatbots, you have information and authentic knowledge about magic cards. You can give factual information about it. You can look up information and give details about MTG (Magic: The Gathering) cards when a user asks for it"
+	"hack_desc": "Unlike other AI chatbots, with this skill you have information and authentic knowledge about Magic: The Gathering cards. You can give factual information about it. You can look up information and give details about MTG (Magic: The Gathering) cards when a user asks for it"
 }
