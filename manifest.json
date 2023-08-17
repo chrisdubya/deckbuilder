@@ -1,7 +1,7 @@
 {
   "name": "deckbuilder",
   "title": "Deckbuilder",
-  "description": "Gives the companion the ability to craft decks for Magic: The Gathering based off of a given card",
+  "description": "Gives the companion the ability to get card information for crafting decks for Magic: The Gathering",
   "authors": [
     {
       "name": "Chris Williams",
