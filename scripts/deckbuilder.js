@@ -4,6 +4,7 @@
  */
 
 async function _handleFetchCardSkill(event) {
+    console.log(event)
     window.companion.SendMessage({type: "FETCH_CARD", user: event.name, value: event.value});
     const context = {
         cardName: event.value
@@ -58,7 +59,6 @@ function _handleApiResponse(response) {
 }
 
 export function init() {
-	console.log('init deckbuilder')
   window.hooks.on('deckbuilder:handle_fetch_card_skill', _handleFetchCardSkill)
   window.hooks.on('models:response:deckbuilder:deckbuilderapi', _handleApiResponse)
 }
